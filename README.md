@@ -1,1 +1,1 @@
-# huffman-encoder
+# text-compressor
