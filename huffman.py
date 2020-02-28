@@ -262,3 +262,5 @@ def huffman_decode(encoded_file, decoded_file):
                     num_times = freq_list[i]
             for x in range(num_times):
                 output_file.write(chr(ascii_value))
+
+huffman_encode("declaration.txt", "out.txt")

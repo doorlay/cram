@@ -1,12 +1,16 @@
 import struct
 import filecmp
 import sys
+from huffman import *
 
 # Compression and decompression functions for Huffman encoded files
 # Assumes header line and encoded data are in files
 # Doesn't handle the empty file and single unique character cases
 
+
+
 def compress(input_file, output_file):
+    
     i_f = open(input_file)
     header = i_f.readline()
     o_f = open(output_file, 'wb')
@@ -62,6 +66,12 @@ def decompress(input_file, output_file):
     o_f.write(outstring)
     o_f.close()
 
+# use -c for compress, -d for decompress after the name of the file
+# This is the format I want to use 
+
+# python3 compress.py declaration.txt -c declaration_out.txt
+
+# This will need to be rewritten to work.
 if __name__ == '__main__': 
     if sys.argv[1] == '-c':
         compress(sys.argv[2], sys.argv[2][:sys.argv[2].find('.')] + '_compressed.txt')
