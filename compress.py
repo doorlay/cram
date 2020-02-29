@@ -3,11 +3,7 @@ import filecmp
 import sys
 from huffman import *
 
-# Compression and decompression functions for Huffman encoded files
-# Assumes header line and encoded data are in files
 # Doesn't handle the empty file and single unique character cases
-
-
 
 def compress(input_file, output_file):
     
@@ -66,14 +62,15 @@ def decompress(input_file, output_file):
     o_f.write(outstring)
     o_f.close()
 
-# use -c for compress, -d for decompress after the name of the file
-# This is the format I want to use 
 
-# python3 compress.py declaration.txt -c declaration_out.txt
-
-# This will need to be rewritten to work.
 if __name__ == '__main__': 
-    if sys.argv[1] == '-c':
-        compress(sys.argv[2], sys.argv[2][:sys.argv[2].find('.')] + '_compressed.txt')
-    elif sys.argv[1] == '-d':
-        decompress(sys.argv[2], sys.argv[2][:sys.argv[2].find('_compressed.txt')] + '_decompressed.txt')
+    if len(sys.argv) != 3:
+        raise FileNotFoundError("Incorrect input formatting. Format should be:\n python3 compress.py file_name.txt -c/-d")
+
+    elif sys.argv[2] == '-c':
+        huffman_encode(sys.argv[1], "encoded.txt")
+        compress("encoded.txt", sys.argv[1][:sys.argv[1].find('.')] + '_compressed.txt')
+
+    elif sys.argv[2] == '-d':
+        decompress(sys.argv[1], "decoded.txt")
+        huffman_decode("decoded.txt",sys.argv[1][:sys.argv[1].find('_compressed.txt')] + '_decompressed.txt')        
