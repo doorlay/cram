@@ -3,7 +3,7 @@ import filecmp
 import sys
 from huffman import *
 
-# Doesn't handle the empty file and single unique character cases
+# Need to handle empty files and single unique character cases
 
 def compress(input_file, output_file):
     
