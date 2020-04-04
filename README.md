@@ -1,6 +1,6 @@
 # Cram
 
-A command line text compressor, using Huffman Nodes for lossless compression.
+A command line text compressor and decompressor, using Huffman Nodes for lossless compression.
 
 Basically, wrote a few additions to a class project for easy command line text compression.
 
