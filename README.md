@@ -7,7 +7,7 @@ Basically, wrote a few additions to a class project for easy command line text c
 # Syntax
 -c indicates compression, -d indicates decompression.
 
-- Compressing
+<h1> Compressing </h1>
 In the command line, execute `python compress.py [filename.txt] -c`
 The outputted file will be named "filename_compressed.txt".
 
