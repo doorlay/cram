@@ -67,7 +67,10 @@ def cnt_freq(filename):
     input_file = open(filename,"r")
     for line in input_file:
         for character in line:
-            lst[ord(character)] += 1
+            if ord(character) == 8216 or ord(character) == 8217:
+                lst[39] += 1
+            else:
+                lst[ord(character)] += 1
     input_file.close()
     return lst
 
@@ -180,7 +183,10 @@ def huffman_encode(in_file, out_file):
             output_file.write("\n")
             for line in input_file:
                 for character in line:
-                    output_file.write("{}".format(code_list[ord(character)]))
+                    if ord(character) == 8216 or ord(character) == 8217:
+                        output_file.write("{}".format(code_list[39]))
+                    else:
+                        output_file.write("{}".format(code_list[ord(character)]))
         else:
             output_file.write(create_header(freq_list))
 
