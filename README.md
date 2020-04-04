@@ -1,4 +1,4 @@
-# text-compressor
+# Cram
 
 A command line text compressor, using Huffman Nodes for lossless compression.
 
