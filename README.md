@@ -2,7 +2,7 @@
 
 A command line text compressor and decompressor, using Huffman Nodes for lossless compression.
 
-Basically, wrote a few additions to a class project for easy command line text compression.
+Basically, I wrote a few additions to a class project for some easy command line text compression.
 
 # Syntax
 -c indicates compression, -d indicates decompression.
